@@ -18,7 +18,7 @@ function removePost() {
   modal.parentNode.removeChild(modal);
 }
 
-function renderPost(data) {
+function renderPost(data, name) {
   const post = `
     <div class="backdrop">
         <div class="modal">
@@ -29,6 +29,7 @@ function renderPost(data) {
             <p class="message">${data.body}</p>
           </div>
           <footer class="actions">
+            <p>Posted by ${name}</p>
             <button class="action-btn">Okay</button>
           </footer>
         </div>
@@ -42,11 +43,12 @@ function renderPost(data) {
 function viewPostHandler(event) {
   loadSpinner();
   const id = event.target.dataset.userId;
+  const name = event.target.dataset.userName;
   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     .then((response) => response.json())
     .then((data) => {
       removeSpinner();
-      renderPost(data);
+      renderPost(data, name);
     })
     .catch((err) => {
       removeSpinner();
@@ -70,7 +72,7 @@ function renderUsers(data) {
                     <h3>${user.name}</h3>
                     <h4>${user.email}</h3>
                 </div>
-                <button class='post-btn' data-user-id=${user.id}>view post</button>
+                <button class='post-btn' data-user-id=${user.id} data-user-name=${user.email}>view post</button>
             </div>
         </li>
         `;
