@@ -119,10 +119,18 @@ body {
   padding: 1rem;
 }
 
+.content .message {
+  color: #3c3c3c;
+}
+
 .actions {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+}
+
+.actions p {
+  font-weight: bold;
 }
 
 .action-btn {

@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:js": "parcel build ./public/js/index.js  --out-dir ./public/js --out-file bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabriceIRANKUNDA/App-challenge.git"
+  },
+  "author": "Fabrice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabriceIRANKUNDA/App-challenge/issues"
+  },
+  "homepage": "https://github.com/FabriceIRANKUNDA/App-challenge#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
